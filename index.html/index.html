@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penmat Travels | Global Travel & Visa Experts</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Homepage</a>
+            <a href="visa-checker.html">Eligibility</a>
+            <a href="destination.html">Destinations</a>
+            <a href="deals.html">Deals</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">about</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <h1>Penmat Travels</h1>
+            <h1>Move Beyond Borders With Confidence </h1>
+            <p>Visa Assistance • Flight Booking • Study Abroad • Travel Consultation</p>
+            <a href="visa-checker.html">
+                <button>Start Your Travel Plan</button>
+            </a>
+        </section>
+
+        <!-- SERVICES -->
+        <section>
+            <h2>Our Services</h2>
+
+            <div class="grid grid-3">
+
+                <div class="card">
+                    <h3>Visa Consultation</h3>
+                    <p>Professional guidance for student, work, visitor and business visas.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Flight Booking</h3>
+                    <p>Affordable flight reservations with global airline partners.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Study Abroad</h3>
+                    <p>University applications and international student relocation.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TOP DESTINATIONS -->
+        <section>
+            <h2>Top Destinations</h2>
+
+            <div class="grid grid-3">
+
+                <div class="card">
+                    <h3>United Kingdom</h3>
+                    <p>Study, work and visit opportunities.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Australia</h3>
+                    <p>Tourist, partner and skilled migration support.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Canada</h3>
+                    <p>Express entry, study permits and travel services.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US -->
+        <section>
+            <h2>Why Choose Penmat Travels</h2>
+
+            <div class="grid grid-2">
+
+                <div class="card">
+                    <h3>Trusted Consultants</h3>
+                    <p>Real human travel experts guiding every journey.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Global Reach</h3>
+                    <p>Serving clients across Africa, Europe and worldwide.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Fast Processing</h3>
+                    <p>Efficient documentation and visa preparation support.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Personalized Travel Plans</h3>
+                    <p>Custom travel strategies based on your goals.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CLIENT CTA -->
+        <section class="hero">
+            <h2>Ready To Travel?</h2>
+            <p>Speak directly with a Penmat consultant today.</p>
+            <a href="contact.html">
+                <button>Book Consultation</button>
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Penmat Travels</p>
+    </footer>
+
+    <script>
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        });
+
+        document.querySelectorAll("section,.card")
+            .forEach(el => {
+                el.classList.add("fade-in");
+                observer.observe(el);
+            });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+.featured-deals {
+    display: grid;
+    gap: 20px;
+}
+
+.budget-deals ul {
+    background: white;
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.testimonials {
+    text-align: center;
+}
+
+/* =========================
+   WHATSAPP TESTIMONIALS
+========================= */
+
+.whatsapp-testimonials {
+    max-width: 700px;
+    margin: auto;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: #e5ddd5;
+    padding: 20px;
+    border-radius: 14px;
+}
+
+.chat-bubble {
+    padding: 12px 16px;
+    border-radius: 12px;
+    max-width: 80%;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    position: relative;
+}
+
+/* client message */
+.chat-bubble.client {
+    background: white;
+    align-self: flex-start;
+}
+
+/* your company reply */
+.chat-bubble.agent {
+    background: #dcf8c6;
+    align-self: flex-end;
+}
+
+/* =========================
+   TESTIMONIAL SLIDER
+========================= */
+
+.testimonial-slider {
+    overflow: hidden;
+    position: relative;
+    width: 75%;
+}
+
+.testimonial-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease;
+}
+
+.testimonial {
+    min-width: 300px;
+    flex: 0 0 auto;
+}

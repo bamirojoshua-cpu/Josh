@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Penmat Travels</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/about.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Homepage</a>
+            <a href="visa-checker.html">Eligibility</a>
+            <a href="destination.html">Destinations</a>
+            <a href="deals.html">Deals</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <h1>About Penmat Travels</h1>
+            <p>
+                Penmat Travels is a modern travel and mobility brand committed to making international movement simple,
+                accessible, and stress-free.
+            </p>
+        </section>
+
+        <section class="company-story card">
+            <h2>🌐 Our Vision</h2>
+            <img src="Assets/images/mohamed_hassan-travel-9855574_1920.png" width="75" alt="">
+            <p>
+                Penmat Travels exists to redefine global mobility by empowering individuals, students, families, and professionals to
+                move beyond borders with confidence, clarity, and opportunity breaking down complex immigration and travel barriers
+                through trusted human expertise, innovative technology, and personalized global guidance that transforms international
+                dreams into structured, achievable journeys across continents and cultures.
+            </p>
+        </section>
+
+        <section class="services card">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Visa Consultation</li>
+                <li>Flight Booking</li>
+                <li>Study Abroad</li>
+                <li>Personal Shopping Turkey</li>
+                <li>Worldwide Delivery</li>
+            </ul>
+        </section>
+
+        <section class="why-us card">
+            <h2>Why Choose Us</h2>
+            <ul>
+                <li>Trusted Consultants</li>
+                <li>Fast Processing</li>
+                <li>International Support</li>
+                <li>Personalized Planning</li>
+            </ul>
+        </section>
+
+        <section class="commitment card">
+            <h2>Our Commitment</h2>
+            <p>
+                We believe in honesty, efficiency, and real human support. Every traveler has a unique story,
+                and at Penmat Travels we guide each client with transparency and professionalism.
+            </p>
+        </section>
+
+        <section class="team card">
+            <h2>Meet the Founder</h2>
+            <div class="team-card">
+                <img src="Assets/images/found.PNG" width="60" alt="Founder">
+                <div>
+                    <h3>Mr Joshua — Founder & Travel Consultant</h3>
+                    <p>
+                        With years of experience helping students and professionals travel globally,
+                        Joshua founded Penmat Travels to simplify international movement.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats card">
+            <h2>Our Global Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h3>500+</h3>
+                    <p>Clients Served</p>
+                </div>
+                <div class="stat-box">
+                    <h3>20+</h3>
+                    <p>Countries Covered</p>
+                </div>
+                <div class="stat-box">
+                    <h3>95%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners card">
+            <h2>Our Travel Partners</h2>
+            <div class="partner-logos">
+                <img src="Assets/images/flight.jpg" alt="">
+                <img src="Assets/images/airline2.png" alt="">
+                <img src="Assets/images/airline3.png" alt="">
+            </div>
+        </section>
+
+        <section class="timeline card">
+            <h2>Our Journey</h2>
+
+            <div class="timeline-item">
+                <h4>2023</h4>
+                <p>Penmat Travels was founded to help students travel abroad.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>2024</h4>
+                <p>Expanded into business travel and sourcing services.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>2025</h4>
+                <p>Served clients across Europe, Africa, and Australia.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Penmat Travels</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            });
+
+            document.querySelectorAll("section")
+                .forEach(el => {
+                    el.classList.add("fade-in");
+                    observer.observe(el);
+                });
+
+        });
+    </script>
+
+</body>
+
+</html>

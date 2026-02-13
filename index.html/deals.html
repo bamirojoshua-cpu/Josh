@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deals | Penmat Travels</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/deals.css">
+
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Homepage</a>
+        <a href="visa-checker.html">Eligibility</a>
+        <a href="destination.html">Destinations</a>
+        <a href="deals.html">Deals</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">about</a>
+    </nav>
+</header>
+    <main>
+
+        <section class="hero">
+            <h1>Hot Travel Deals</h1>
+        </section>
+
+        <section class="featured-deals">
+            <h2>Featured Packages</h2>
+
+            <div class="deal-card">
+                <h3>Australia Tourist Package</h3>
+                <p>Visa Assistance + Flight Reservation + Travel Guidance</p>
+            </div>
+
+            <div class="deal-card">
+                <h3>UK Visitor Package</h3>
+                <p>Consultation + Booking Assistance</p>
+            </div>
+            <div class="deal-card">
+                <h3>Turkey Visitor & Health Package</h3>
+                <p>Consultation + Booking Assistance</p>
+            </div>
+            <div class="deal-card">
+                <h3>south Africa Visitor Package</h3>
+                <p>Consultation + Booking Assistance</p>
+            </div>
+            <div class="deal-card">
+                <h3>Germany student Package</h3>
+                <p>Consultation + Booking Assistance</p>
+            </div>
+            <div class="deal-card">
+                <h3>Europe study Pathway</h3>
+                <p>Consultation + Booking Assistance</p>
+            </div>
+            <div class="deal-card">
+                <h3>Brazil Visitor Package</h3>
+                <p>Consultation + Booking Assistance</p>
+            </div>
+            <div class="deal-card">
+                <h3>canada Visitor Package</h3>
+                <p>Consultation + Booking Assistance</p>
+            </div>
+
+        </section>
+
+        <section class="budget-deals">
+            <h2>Budget Deals</h2>
+            <ul>
+                <li>Student Discounts</li>
+                <li>Group Travel</li>
+                <li>Visa Only Packages</li>
+                <li>Under $1000 Trips</li>
+            </ul>
+        </section>
+
+        <section class="testimonials">
+            <h2>Client Success Stories</h2>
+            <p>Visa approvals and happy travelers worldwide.</p>
+
+        </section>
+
+        <!-- WHATSAPP STYLE TESTIMONIALS -->
+        <section class="whatsapp-testimonials">
+        
+            <h2>Client Conversations</h2>
+        
+            <div class="chat-container">
+        
+                <div class="chat-bubble client">
+                    Hello Penmat Travels, I just received my UK study visa today 🙏🏾
+                </div>
+        
+                <div class="chat-bubble agent">
+                    Congratulations 🎉 We’re happy for you. Wishing you success in your studies!
+                </div>
+        
+                <div class="chat-bubble client">
+                    Thank you for guiding me through everything. The process was smooth.
+                </div>
+        
+                <div class="chat-bubble client">
+                    My Canada visa got approved today! I really appreciate your support.
+                </div>
+        
+                <div class="chat-bubble agent">
+                    Amazing news 🇨🇦 Safe travels and keep us updated when you arrive.
+                </div>
+        
+                <div class="chat-bubble client">
+                    Australia visa granted ✅ Your document checks really helped.
+                </div>
+        
+                <div class="chat-bubble agent">
+                    We’re glad everything worked out 🇦🇺 Enjoy your journey!
+                </div>
+        
+            </div>
+        
+        </section>
+        <!-- TESTIMONIAL SLIDER -->
+        <section class="testimonial-section">
+           
+        
+            <div class="testimonial-slider">
+        
+                <div class="testimonial-track">
+        
+                    <div class="card testimonial">
+                        <h3>🇬🇧 United Kingdom – Study Visa</h3>
+                        <p>Penmat Travels guided me through my UK study visa from start to finish. </p>
+                    </div>
+        
+                    <div class="card testimonial">
+                        <h3>🇨🇦 Canada – Visa Support</h3>
+                        <p>My canadian visa was approved
+                            and the process was very clear.</p>
+                    </div>
+        
+                    <div class="card testimonial">
+                        <h3>🇦🇺 Australia – Visitor Visa</h3>
+                        <p>The team made my Australia visa process simple and organized.
+                        </p>
+                    </div>
+        
+                    <div class="card testimonial">
+                        <h3>🇸🇰 Slovakia – Work Visa</h3>
+                        <p>Their guidance made a complicated process easier and I successfully relocated for work.</p>
+                    </div>
+        
+                    <div class="card testimonial">
+                        <h3>🇩🇪 Germany – Visa Application</h3>
+                        <p>Great support and strong attention to detail helped me secure my visa approval.</p>
+                    </div>
+        
+                    <div class="card testimonial">
+                        <h3>🇹🇷 Turkey – Travel Support</h3>
+                        <p>Professional and fast service. I arrived fully prepared thanks to Penmat Travels.</p>
+                    </div>
+        
+                </div>
+        
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <p>© 2026 Penmat Travels</p>
+    </footer>
+
+    <script>
+
+        const track = document.querySelector(".testimonial-track");
+        let position = 0;
+
+        function autoSlide() {
+            const cardWidth = document.querySelector(".testimonial").offsetWidth + 20;
+            position += cardWidth;
+
+            if (position >= track.scrollWidth - track.clientWidth) {
+                position = 0;
+            }
+
+            track.style.transform = `translateX(-${position}px)`;
+        }
+
+        setInterval(autoSlide, 3000);
+
+    </script>
+
+    <script>
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        });
+
+        document.querySelectorAll(".card,.hero,section")
+            .forEach(el => {
+                el.classList.add("fade-in");
+                observer.observe(el);
+            });
+
+    </script>
+
+
+</body>
+
+</html>

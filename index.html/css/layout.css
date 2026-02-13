@@ -1,0 +1,149 @@
+/* =========================
+   GLOBAL LAYOUT SYSTEM
+========================= */
+
+header {
+    background: white;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 18px;
+    font-weight: 600;
+}
+
+nav a {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #0ea5e9, #0369a1);
+    color: white;
+    padding: 80px 40px;
+    text-align: center;
+    border-radius: var(--radius);
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+}
+
+.hero p {
+    color: #e0f2fe;
+}
+
+/* GRID SYSTEM */
+.grid {
+    display: grid;
+    gap: 25px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* CARDS */
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    color: var(--muted);
+}
+
+/* DEAL CARD */
+.deal-card {
+    background: white;
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.deal-card:hover {
+    transform: scale(1.03);
+}
+
+/* DESTINATION GRID */
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* STATS GRID */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.stat-box {
+    background: white;
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* TEAM CARD */
+.team-card {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* PARTNERS */
+.partner-logos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.partner-logos img {
+    width: 80px;
+}

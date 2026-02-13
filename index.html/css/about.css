@@ -1,0 +1,9 @@
+.company-story img {
+    margin: 15px 0;
+}
+
+.timeline-item {
+    padding: 12px 0;
+    border-left: 3px solid var(--primary);
+    padding-left: 15px;
+}

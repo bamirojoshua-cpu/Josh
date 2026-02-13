@@ -1,0 +1,11 @@
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-form form {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
