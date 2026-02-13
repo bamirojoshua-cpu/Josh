@@ -177,6 +177,33 @@ body {
 ========================= */
 @media (max-width: 600px) {
 
+    /* Modern pill-style nav for mobile */
+        header nav {
+            flex-direction: row;
+            /* keep horizontal scroll instead of stacking */
+            overflow-x: auto;
+            /* scrollable if too wide */
+            gap: 12px;
+            padding: 12px;
+        }
+    
+        nav a {
+            flex: 0 0 auto;
+            /* prevents shrinking when scrolling */
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            transition: transform 0.2s, background 0.2s;
+        }
+    
+        nav a:hover {
+            transform: scale(1.05);
+            background: #0369a1;
+            /* slightly darker shade on hover */
+        }
     /* HEADER / NAV DASHBOARD */
     header nav {
         flex-direction: column;
