@@ -147,3 +147,108 @@ footer {
 .partner-logos img {
     width: 80px;
 }
+
+/* base.css */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* =========================
+   MOBILE OPTIMIZATIONS
+========================= */
+@media (max-width: 600px) {
+
+    /* HEADER / NAV DASHBOARD */
+    header nav {
+        flex-direction: column;
+        /* stack links vertically */
+        align-items: center;
+        gap: 12px;
+        /* smaller gap between links */
+        padding: 12px;
+        /* smaller padding */
+        overflow-x: auto;
+        /* allow scrolling if needed */
+    }
+
+    nav a {
+        font-size: 1rem;
+        /* slightly smaller text */
+        padding: 8px 0;
+        /* vertical spacing */
+        width: 100%;
+        /* links take full width for easy tap */
+        text-align: center;
+        flex: 0 0 auto;
+        /* prevent shrinking when scrollable */
+    }
+
+    /* HERO SECTION */
+    .hero {
+        padding: 40px 20px;
+        /* smaller padding */
+        text-align: center;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+        /* smaller paragraph text */
+    }
+
+    /* GRID LAYOUTS */
+    .grid-2,
+    .grid-3,
+    .destination-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+        /* single column on mobile */
+        gap: 15px;
+    }
+
+    /* CARDS */
+    .card,
+    .deal-card,
+    .stat-box {
+        padding: 15px;
+        /* reduce padding for mobile */
+        font-size: 0.95rem;
+        /* slightly smaller text */
+    }
+
+    /* TEAM & PARTNERS */
+    .team-card {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .partner-logos {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .partner-logos img {
+        width: 60px;
+        /* smaller logos */
+    }
+
+}
