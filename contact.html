@@ -184,7 +184,22 @@
                 <textarea id="message" name="message" rows="4"></textarea>
 
                 <button type="submit">Request Consultation</button>
+            <div id="thank-you-message"
+                style="display:none; margin-top: 20px; padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; text-align: center;">
+                <strong>Thank you for contacting Penmat Travels!</strong><br>
+                Your request has been sent successfully. We will be in touch within 24 hours.
+            </div>
+            
+            <script>
+                // This script shows the message when the button is clicked
+                const form = document.querySelector('form');
+                const msg = document.getElementById('thank-you-message');
 
+                form.onsubmit = function () {
+                    msg.style.display = 'block'; // Show the message
+                    // Note: The page will still redirect/refresh based on your n8n settings
+                };
+            </script>
             </form>
 
         </section>
