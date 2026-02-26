@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="CSS/contact.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 
 <body>
@@ -25,13 +25,11 @@
     </header>
 
     <main>
-
         <section class="hero">
             <h1>Talk To A Travel Consultant</h1>
         </section>
 
         <section class="contact-form">
-
             <form action="https://josh88.app.n8n.cloud/webhook/webhook" method="post">
 
                 <label for="name">Full Name</label>
@@ -43,18 +41,15 @@
                 <label for="phone">Phone (WhatsApp)</label>
                 <input type="tel" id="phone" name="phone">
 
-                <!-- COUNTRY SELECT -->
                 <label for="country">Country of Interest</label>
                 <select id="country" name="country" required>
-                
                     <option value="">Select Country</option>
-                
-                    <option>Afghanistan</option>
+                    <option value="afghanistan">Afghanistan</option>
                     <option>Albania</option>
                     <option>Algeria</option>
                     <option>Argentina</option>
                     <option>Armenia</option>
-                    <option>Australia</option>
+                    <option value="australia">Australia</option>
                     <option>Austria</option>
                     <option>Azerbaijan</option>
                     <option>Bahrain</option>
@@ -66,7 +61,7 @@
                     <option>Bulgaria</option>
                     <option>Cambodia</option>
                     <option>Cameroon</option>
-                    <option>Canada</option>
+                    <option value="canada">Canada</option>
                     <option>Chile</option>
                     <option>China</option>
                     <option>Colombia</option>
@@ -129,7 +124,7 @@
                     <option>Paraguay</option>
                     <option>Peru</option>
                     <option>Philippines</option>
-                    <option>Poland</option>
+                    <option value="poland">Poland</option>
                     <option>Portugal</option>
                     <option>Qatar</option>
                     <option>Romania</option>
@@ -152,25 +147,22 @@
                     <option>Tanzania</option>
                     <option>Thailand</option>
                     <option>Tunisia</option>
-                    <option>Turkey</option>
+                    <option value="turkey">Turkey</option>
                     <option>Uganda</option>
                     <option>Ukraine</option>
-                    <option>United Arab Emirates</option>
-                    <option>United Kingdom</option>
-                    <option>United States</option>
+                    <option value="uae">United Arab Emirates</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="usa">United States</option>
                     <option>Uruguay</option>
                     <option>Uzbekistan</option>
                     <option>Venezuela</option>
                     <option>Vietnam</option>
                     <option>Zambia</option>
                     <option>Zimbabwe</option>
-                
                 </select>
 
-
-                <!-- VISA TYPE SELECT -->
                 <label for="visa">Visa Type</label>
-                <select id="visa" name="visa_type" required>
+                <select id="visaType" name="visa_type" required>
                     <option value="">Select Visa Type</option>
                     <option>Student Visa</option>
                     <option>Work Visa</option>
@@ -184,24 +176,13 @@
                 <textarea id="message" name="message" rows="4"></textarea>
 
                 <button type="submit">Request Consultation</button>
-            <div id="thank-you-message"
-                style="display:none; margin-top: 20px; padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; text-align: center;">
-                <strong>Thank you for contacting Penmat Travels!</strong><br>
-                Your request has been sent successfully. We will be in touch within 24 hours.
-            </div>
-            
-            <script>
-                // This script shows the message when the button is clicked
-                const form = document.querySelector('form');
-                const msg = document.getElementById('thank-you-message');
 
-                form.onsubmit = function () {
-                    msg.style.display = 'block'; // Show the message
-                    // Note: The page will still redirect/refresh based on your n8n settings
-                };
-            </script>
+                <div id="thank-you-message"
+                    style="display:none; margin-top: 20px; padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; text-align: center;">
+                    <strong>Thank you for contacting Penmat Travels!</strong><br>
+                    Your request has been sent successfully. We will be in touch within 24 hours.
+                </div>
             </form>
-
         </section>
 
         <section class="quick-contact">
@@ -215,8 +196,6 @@
                 <li><a href="tel:+905065094599" class="contact-btn call">Call Now</a></li>
             </ul>
         </section>
-
-
     </main>
 
     <footer>
@@ -224,6 +203,12 @@
     </footer>
 
     <script>
+        const form = document.querySelector('form');
+        const msg = document.getElementById('thank-you-message');
+
+        form.onsubmit = function () {
+            msg.style.display = 'block';
+        };
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -233,15 +218,11 @@
             });
         });
 
-        document.querySelectorAll(".card,.hero,section")
-            .forEach(el => {
-                el.classList.add("fade-in");
-                observer.observe(el);
-            });
+        document.querySelectorAll(".card,.hero,section").forEach(el => {
+            el.classList.add("fade-in");
+            observer.observe(el);
+        });
 
-    </script>
-
-    <script>
         const visaOptions = {
             uk: ["Student Visa", "Work Visa", "Visitor Visa", "Marriage Visa", "Business Visa"],
             canada: ["Student Visa", "Work Permit", "Visitor Visa", "Express Entry"],
@@ -256,9 +237,8 @@
         const visaSelect = document.getElementById("visaType");
 
         countrySelect.addEventListener("change", function () {
-
             const selectedCountry = this.value;
-            visaSelect.innerHTML = '<option value="">Select visa type</option>';
+            visaSelect.innerHTML = '<option value="">Select Visa Type</option>';
 
             if (visaOptions[selectedCountry]) {
                 visaOptions[selectedCountry].forEach(function (visa) {
@@ -266,12 +246,17 @@
                     option.textContent = visa;
                     visaSelect.appendChild(option);
                 });
+            } else {
+                // Default options if country isn't in special list
+                const defaults = ["Student Visa", "Work Visa", "Visitor Visa", "Marriage Visa", "Health Visa", "Business Visa"];
+                defaults.forEach(visa => {
+                    const option = document.createElement("option");
+                    option.textContent = visa;
+                    visaSelect.appendChild(option);
+                });
             }
         });
     </script>
-
-
-
 </body>
 
 </html>
