@@ -144,20 +144,27 @@ section {
         width: 30px;
     }
 }
+/* Visible Download Button */
 .download-btn {
     display: inline-block;
-    padding: 12px 25px;
-    background-color: var(--secondary);
-    color: var(--white);
-    text-decoration: none;
+    background-color: #1a4870;
+    /* Your brand primary blue */
+    color: #ffffff !important;
+    /* Forces text to be white */
+    padding: 15px 30px;
     border-radius: 8px;
     font-weight: 700;
-    transition: var(--transition);
-    margin-top: 10px;
+    text-decoration: none;
+    margin-top: 20px;
+    border: 2px solid #1a4870;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
 .download-btn:hover {
-    background-color: var(--primary);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #2a9d8f;
+    /* Changes to your brand teal on hover */
+    border-color: #2a9d8f;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
