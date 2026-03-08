@@ -1,32 +1,154 @@
-.company-story img {
-    margin: 15px 0;
+/* Hero Overrides for About Page */
+.hero {
+    background: linear-gradient(135deg, rgba(38, 70, 83, 0.95), rgba(42, 157, 143, 0.85)),
+        url('https://images.unsplash.com/photo-1527672829621-f3f3a04294e7?auto=format&fit=crop&q=80&w=1500');
+    padding: 7rem 5%;
+    text-align: center;
 }
 
+/* Card Styling for Sections */
+.card {
+    background: var(--white);
+    padding: 3rem;
+    margin: 2rem auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 1000px;
+    border: 1px solid #f0f0f0;
+}
+
+.card h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+/* Founder / Team Section */
+.team-card {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+}
+
+.team-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+    border: 4px solid var(--white);
+}
+
+.team-card h3 {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.stat-box h3 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 0;
+}
+
+.stat-box p {
+    font-weight: 600;
+    color: var(--secondary);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* Timeline */
 .timeline-item {
-    padding: 12px 0;
-    border-left: 3px solid var(--primary);
-    padding-left: 15px;
-}
-/* base.css */
-body {
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
+    padding-left: 2rem;
+    border-left: 2px solid var(--primary);
+    position: relative;
+    margin-bottom: 2rem;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border: 3px solid var(--white);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px var(--primary);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .container {
-        width: 95%;
+.timeline-item h4 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Partner Logos */
+.partner-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: var(--transition);
+}
+
+.partner-logos:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.partner-logos img {
+    max-height: 50px;
+    width: auto;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .team-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    h1 {
-        font-size: 1.5rem;
+    .team-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
     }
 }

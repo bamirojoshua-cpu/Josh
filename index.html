@@ -13,18 +13,28 @@
 </head>
 
 <body>
-
     <header>
-        <nav>
-            <a href="index.html">Homepage</a>
-            <a href="visa-checker.html">Eligibility</a>
-            <a href="destination.html">Destinations</a>
-            <a href="deals.html">Deals</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">about</a>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="Assets/images/9441909B-AEAA-4A28-8887-1BA00A116248_4_5005_c.jpeg" width="50">
+            </a>
+    
+            <div class="nav-links">
+                <a href="index.html">Homepage</a>
+                <a href="visa-checker.html">Eligibility</a>
+                <a href="destination.html">Destinations</a>
+                <a href="deals.html">Deals</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+            </div>
+    
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
-
 
     <main>
 
@@ -145,6 +155,13 @@
                 el.classList.add("fade-in");
                 observer.observe(el);
             });
+
+            const menuToggle = document.querySelector('.menu-toggle');
+                const navLinks = document.querySelector('.nav-links');
+
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
 
     </script>
 

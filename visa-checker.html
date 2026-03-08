@@ -237,7 +237,11 @@
 
                 </select>
 
-                <label>Visa Type</label>
+                
+
+                
+                
+                <label>📄 Visa Type</label>
                 <select id="visaType" required>
                     <option value="">Select Visa Type</option>
                     <option value="student">Student Visa</option>
@@ -247,24 +251,25 @@
                     <option value="Marriage">spouse visa</option>
                     <option value="Health">health Visa</option>
                     <option value="global-talent">Global-talent visa</option>
+                    <option value="citizenship by investement">citizenship by investement</option>
                 </select>
-
-                <label>Do you have a valid passport?</label>
+                
+                <label>🛂 Do you have a valid passport?</label>
                 <select id="passport">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
+                    <option value="yes">Yes, I have a valid passport</option>
+                    <option value="no">No, I don't have one yet</option>
                 </select>
-
-                <label>Do you have financial proof?</label>
+                
+                <label>💰 Do you have financial proof?</label>
                 <select id="finance">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
+                    <option value="yes">Yes, I have proof of funds</option>
+                    <option value="no">No, I need guidance</option>
                 </select>
-
-                <label>Do you have an invitation / admission / job offer?</label>
+                
+                <label>📩 Do you have an invitation / admission / job offer?</label>
                 <select id="support">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
+                    <option value="yes">Yes, I have a document</option>
+                    <option value="no">No, I am still searching</option>
                 </select>
 
                 <button type="button" onclick="checkEligibility()">Check Eligibility</button>
@@ -316,6 +321,35 @@
             document.getElementById("resultBox").style.display = "block";
 
         }
+
+        function checkEligibility() {
+                const passport = document.getElementById("passport").value;
+                const finance = document.getElementById("finance").value;
+                const support = document.getElementById("support").value;
+                const resultBox = document.getElementById("resultBox");
+                const resultText = document.getElementById("resultText");
+
+                let result = "";
+
+                // Logic remains the same
+                if (passport === "no") {
+                    result = "You need a valid passport before applying for any visa.";
+                    resultBox.style.borderColor = "#e53e3e"; // Red for warning
+                    resultBox.style.background = "#fff5f5";
+                } else if (finance === "no" || support === "no") {
+                    result = "You have some requirements missing. Speak to a consultant for a roadmap.";
+                    resultBox.style.borderColor = "#dd6b20"; // Orange for caution
+                    resultBox.style.background = "#fffaf0";
+                } else {
+                    result = "You appear to be a strong candidate! Book a consultation to proceed.";
+                    resultBox.style.borderColor = "#38a169"; // Green for success
+                    resultBox.style.background = "#f0fff4";
+                }
+
+                resultText.innerText = result;
+                resultBox.style.display = "block";
+                resultBox.scrollIntoView({ behavior: 'smooth' });
+            }
 
     </script>
 

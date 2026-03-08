@@ -256,6 +256,20 @@
                 });
             }
         });
+
+        form.onsubmit = function () {
+                const btn = form.querySelector('button');
+                btn.innerHTML = "Sending...";
+                btn.classList.add('loading');
+
+                // This shows the message after a tiny delay to feel natural
+                setTimeout(() => {
+                    msg.style.display = 'block';
+                    btn.innerHTML = "Request Consultation";
+                    btn.classList.remove('loading');
+                    form.reset(); // Clears the form fields
+                }, 1500);
+            };
     </script>
 </body>
 
