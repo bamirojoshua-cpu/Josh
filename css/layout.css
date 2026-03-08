@@ -168,3 +168,25 @@ section {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
+/* =========================
+   LANDING PAGE DESKTOP NAV FIX
+========================= */
+@media (min-width: 1024px) {
+
+    /* Target only the landing page header */
+    header.landing-page .navbar {
+        display: flex;
+        justify-content: center;
+        /* center all links horizontally */
+        align-items: center;
+        gap: 2.5rem;
+        /* space between links */
+    }
+
+    /* Optional: if you have a logo inside navbar */
+    header.landing-page .navbar .logo {
+        margin-right: 2rem;
+        /* push links slightly away from logo */
+    }
+}
