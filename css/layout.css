@@ -144,3 +144,20 @@ section {
         width: 30px;
     }
 }
+.download-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--secondary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.download-btn:hover {
+    background-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
