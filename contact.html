@@ -30,14 +30,13 @@
         </section>
 
         <section class="contact-form">
-            <form action="https://josh88.app.n8n.cloud/webhook/webhook" method="post">
-
+            <form id="travel-form">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required>
-
+        
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
-
+        
                 <label for="phone">Phone (WhatsApp)</label>
                 <input type="tel" id="phone" name="phone">
 
@@ -172,6 +171,8 @@
                     <option>Business Visa</option>
                 </select>
 
+                <label for="nationality">Nationality</label>
+                <input type="text" id="nationality" name="nationality" required>
                 <label for="message">Additional Message</label>
                 <textarea id="message" name="message" rows="4"></textarea>
 
@@ -216,73 +217,140 @@
     </footer>
 
     <script>
-        const form = document.querySelector('form');
-        const msg = document.getElementById('thank-you-message');
+       
+         const scriptURL = 'https://script.google.com/macros/s/AKfycbz0vkx2F3UgqgI_TXjGWO_tcvPCQ0MGcUsqhrA06ZKpbl15yYEt1Y4rLigg8-2h7M1TOQ/exec'; // MUST end with /exec
 
-        form.onsubmit = function () {
-            msg.style.display = 'block';
-        };
+            const form = document.getElementById('travel-form');
+            const msg = document.getElementById('thank-you-message');
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
-                }
+            form.addEventListener('submit', e => {
+
+                e.preventDefault();
+
+            const btn = form.querySelector('button');
+            btn.innerHTML = "Sending...";
+            btn.classList.add('loading');
+
+            const formData = new FormData(form);
+
+            const data = {
+                name: formData.get("name"),
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+            nationality: formData.get("nationality"),
+            country: formData.get("country"),
+            visa_type: formData.get("visa_type"),
+            message: formData.get("message")
+         };
+
+            fetch(scriptURL, {
+                method: 'POST',
+            mode: 'cors',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+           }
+         })
+         .then(response => {
+                msg.style.display = "block";
+            btn.innerHTML = "Request Consultation";
+            btn.classList.remove('loading');
+            form.reset();
+        })
+         .catch(error => {
+                console.error('Error!', error.message);
+            alert("Something went wrong. Please contact us via WhatsApp.");
+         });
+
+        });
+
+
+
+
+            const observer = new IntersectionObserver(entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                    }
+
+                });
+
             });
-        });
 
-        document.querySelectorAll(".card,.hero,section").forEach(el => {
-            el.classList.add("fade-in");
-            observer.observe(el);
-        });
+            document.querySelectorAll(".hero, section").forEach(el => {
 
-        const visaOptions = {
-            uk: ["Student Visa", "Work Visa", "Visitor Visa", "Marriage Visa", "Business Visa"],
-            canada: ["Student Visa", "Work Permit", "Visitor Visa", "Express Entry"],
-            australia: ["Tourist Visa", "Student Visa", "Partner Visa", "Work Visa"],
-            usa: ["Student Visa", "B1/B2 Visitor", "Work Visa", "Business Visa"],
-            turkey: ["Residence Permit", "Student Visa", "Work Visa"],
-            poland: ["Study Visa", "Work Visa", "Business Visa"],
-            uae: ["Work Visa", "Visit Visa", "Business Visa", "Medical Visa"]
-        };
+                el.classList.add("fade-in");
 
-        const countrySelect = document.getElementById("country");
-        const visaSelect = document.getElementById("visaType");
+                observer.observe(el);
 
-        countrySelect.addEventListener("change", function () {
-            const selectedCountry = this.value;
-            visaSelect.innerHTML = '<option value="">Select Visa Type</option>';
+            });
 
-            if (visaOptions[selectedCountry]) {
-                visaOptions[selectedCountry].forEach(function (visa) {
-                    const option = document.createElement("option");
-                    option.textContent = visa;
-                    visaSelect.appendChild(option);
-                });
-            } else {
-                // Default options if country isn't in special list
-                const defaults = ["Student Visa", "Work Visa", "Visitor Visa", "Marriage Visa", "Health Visa", "Business Visa"];
-                defaults.forEach(visa => {
-                    const option = document.createElement("option");
-                    option.textContent = visa;
-                    visaSelect.appendChild(option);
-                });
-            }
-        });
 
-        form.onsubmit = function () {
-                const btn = form.querySelector('button');
-                btn.innerHTML = "Sending...";
-                btn.classList.add('loading');
 
-                // This shows the message after a tiny delay to feel natural
-                setTimeout(() => {
-                    msg.style.display = 'block';
-                    btn.innerHTML = "Request Consultation";
-                    btn.classList.remove('loading');
-                    form.reset(); // Clears the form fields
-                }, 1500);
+            const visaOptions = {
+
+                uk: ["Student Visa", "Work Visa", "Visitor Visa", "Marriage Visa", "Business Visa"],
+
+                canada: ["Student Visa", "Work Permit", "Visitor Visa", "Express Entry"],
+
+                australia: ["Tourist Visa", "Student Visa", "Partner Visa", "Work Visa"],
+
+                usa: ["Student Visa", "B1/B2 Visitor", "Work Visa", "Business Visa"],
+
+                turkey: ["Residence Permit", "Student Visa", "Work Visa"],
+
+                poland: ["Study Visa", "Work Visa", "Business Visa"],
+
+                uae: ["Work Visa", "Visit Visa", "Business Visa", "Medical Visa"]
+
             };
+
+
+            const countrySelect = document.getElementById("country");
+            const visaSelect = document.getElementById("visaType");
+
+
+            countrySelect.addEventListener("change", function () {
+
+                const selectedCountry = this.value;
+
+                visaSelect.innerHTML = '<option value="">Select Visa Type</option>';
+
+                if (visaOptions[selectedCountry]) {
+
+                    visaOptions[selectedCountry].forEach(function (visa) {
+
+                        const option = document.createElement("option");
+
+                        option.textContent = visa;
+
+                        visaSelect.appendChild(option);
+
+                    });
+
+                }
+
+                else {
+
+                    const defaults = ["Student Visa", "Work Visa", "Visitor Visa", "Marriage Visa", "Health Visa", "Business Visa"];
+
+                    defaults.forEach(visa => {
+
+                        const option = document.createElement("option");
+
+                        option.textContent = visa;
+
+                        visaSelect.appendChild(option);
+
+                    });
+
+                }
+
+            });
     </script>
 </body>
 
