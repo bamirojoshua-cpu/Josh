@@ -40,6 +40,24 @@
     background: var(--white);
 }
 
+section a button,
+.section-cta button {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+section a button:hover,
+.section-cta button:hover {
+    background: var(--accent);
+    color: var(--dark);
+    transform: scale(1.05);
+}
+
 /* Cards */
 .card {
     padding: 2.5rem;

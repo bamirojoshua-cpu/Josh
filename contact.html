@@ -19,18 +19,34 @@
             <a href="visa-checker.html">Eligibility</a>
             <a href="destination.html">Destinations</a>
             <a href="deals.html">Deals</a>
+            <a href="shop.html">Shop</a>
             <a href="contact.html">Contact</a>
-            <a href="about.html">about</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Talk To A Travel Consultant</h1>
+            <h1>Contact Penmat Travels</h1>
+            <p>Travel consultation, visa assistance, personal shopping, sourcing, and product orders</p>
         </section>
 
         <section class="contact-form">
             <form id="travel-form">
+                <label for="service">Service Required</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a Service</option>
+                    <option>Travel Consultation</option>
+                    <option>Visa Assistance</option>
+                    <option>Flight Booking</option>
+                    <option>Study Abroad</option>
+                    <option>Personal Shopping (Turkey)</option>
+                    <option>Product Sourcing</option>
+                    <option>Turkish Wears — Purchase</option>
+                    <option>Home Essentials — Purchase</option>
+                    <option>Other</option>
+                </select>
+
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required>
         
@@ -40,8 +56,8 @@
                 <label for="phone">Phone (WhatsApp)</label>
                 <input type="tel" id="phone" name="phone">
 
-                <label for="country">Country of Interest</label>
-                <select id="country" name="country" required>
+                <label for="country">Country of Interest (for travel services)</label>
+                <select id="country" name="country">
                     <option value="">Select Country</option>
                     <option value="afghanistan">Afghanistan</option>
                     <option>Albania</option>
@@ -160,8 +176,8 @@
                     <option>Zimbabwe</option>
                 </select>
 
-                <label for="visa">Visa Type</label>
-                <select id="visaType" name="visa_type" required>
+                <label for="visa">Visa Type (for visa services)</label>
+                <select id="visaType" name="visa_type">
                     <option value="">Select Visa Type</option>
                     <option>Student Visa</option>
                     <option>Work Visa</option>
